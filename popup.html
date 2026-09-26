@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">  <title>历史记录</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; width: 380px; padding: 10px; background-color: #f4f7f9; }
+  h3 { margin-top: 0; border-bottom: 2px solid #3498db; padding-bottom: 5px; color: #2c3e50; }
+  /* 新增控制区域样式 */
+  #timer-control-area {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #fff;
+      text-align: center;
+  }
+  /* 移除 timer-display 样式 */
+  
+  #start-pause-btn, #stop-btn {
+      padding: 8px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+      min-width: 100px; /* 确保按钮有足够宽度 */
+  }
+  #start-pause-btn { background-color: #2ecc71; } /* 默认绿色 */
+  
+  #history-list, #daily-summary ul { list-style: none; padding: 0; margin-top: 10px; }
+  .history-item { margin-bottom: 8px; background-color: white; padding: 8px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 0.9em; }
+  .date-header { font-weight: bold; background-color: #ecf0f1; color: #2c3e50; padding: 5px 8px; margin: 10px 0 5px 0; border-radius: 3px; }
+  .history-item strong { color: #34495e; }
+  #daily-summary h4 { margin-top: 20px; color: #3498db; }
+  #daily-summary li { padding: 3px 0; border-bottom: 1px dotted #eee; }
+</style>
+</head>
+<body>
+  <div id="timer-control-area">
+      <button id="start-pause-btn">开始</button>
+  </div>
+  <h3>📚 今日阅读记录</h3>
+  <div id="daily-summary"></div>
+  <ul id="history-list">
+    </ul>
+  <div style="margin-top: 15px; display: flex; justify-content: space-between;">
+      <button id="show-all-btn">显示全部记录 (分页)</button> 
+      <button id="clear-all-btn" style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">清空全部数据</button> 
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "作业阅读计时器",
+  "version": "1.0",
+  "description": "自动检测录音开始并累计跨页面时间，记录历史。",
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://www.kidsa-z.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.kidsa-z.com/*",
+        "file:///D:/Codes/ReadingTimerExtension/test_harness.html"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["history.html", "history.js", "popup.html", "popup.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
